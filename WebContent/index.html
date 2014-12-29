@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Experimental Probabilistic Questionnaire</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+i = 0;
+$(document).ready(function(){
+  $("#show_s1").click(function(){
+	$("#s1").show(); 
+  });
+  $("#show_s2").click(function(){
+	$("#s2").show(); 
+  });
+  $("#show_s3").click(function(){
+	$("#s3").show(); 
+  });
+  $("#get_card").click(function(){
+		$("#backcards").hide();
+		$("#frontcards").show();
+	  });
+  $("#target_form").click(function(event){
+	  if ( $( "input:first" ).val() === "correct" ) {
+		    $( "span" ).text( "Validated..." ).show();
+		    return;
+		  }
+		 
+		  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+		  event.preventDefault();
+  });
+  $(".isSelect").click(function () {  
+		alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
+  });
+ 
+});
+</script>
+
+</head>
+<body>
+
+<p id="prime_knowledge">
+	<br>Prime Knowledge
+	<br>the probability of getting one card from a pile of them is the same since they are independent events. For example, getting A or 9 has the same probability(1/13) from a pile of 13 cards
+</p>
+<button id="show_s1">Continue</button>
+<div id="s1" style="display: none;">
+	<br>________________________________________________________________________________________________
+	<br>Q1: 
+	<br> Take 1 card from a pile of 13 (A-K). flip it over, you see a 4, and now take a second card from another pile of 13 cards (A-K), What is the probability of the sum being less than 9? 
+	<script>
+	$(function(){
+		var data = "<div>";
+		var i = 0;
+		for (i=0;i<13;i++){
+			data += "<img src=\"./club/back.png\" alt=\"cannot display\">";
+		}
+		data += "</div>";
+		$('#backcards').append(data);
+	})	
+	</script>
+	<div id="backcards"></div>
+	
+	<div id="frontcards" style="display:none;">
+		<img src="./club/Ace.png" alt="cannot display">		
+		<img src="./club/2.png" alt="cannot display">
+		<img src="./club/3.png" alt="cannot display">
+		<img src="./club/4.png" alt="cannot display">
+		<img src="./club/5.png" alt="cannot display">
+		<img src="./club/6.png" alt="cannot display">
+		<img src="./club/7.png" alt="cannot display">
+		<img src="./club/8.png" alt="cannot display">
+		<img src="./club/9.png" alt="cannot display">
+		<img src="./club/10.png" alt="cannot display">
+		<img src="./club/11.png" alt="cannot display">
+		<img src="./club/12.png" alt="cannot display">
+		<img src="./club/13.png" alt="cannot display">
+	</div>
+	<br><button id="get_card">Flip</button>
+	<br><button id="show_s2">Continue</button>
+</div>
+<div id="s2" style="display: none;">
+	<br>________________________________________________________________________________________________</br>
+	<br>Now, you are asked to pick a card from the following pile
+	<br>What are your options for the sum being less than 9? 
+	<br><button id="show_s3">Continue</button>
+</div>
+<div id="s3" style="display: none;">
+	<br>________________________________________________________________________________________________</br>
+	<br>What is the probability of choosing each card?
+	<br>
+	<br><select id="select_1">
+		<option>1/2</option>
+		<option>1/4</option>
+		<option>1/5</option>
+		<option>1/10</option>
+		<option>1/13</option>
+	</select>
+	
+	<br><select id="select_2">
+		<option>1/2</option>
+		<option>1/4</option>
+		<option>1/5</option>
+		<option>1/10</option>
+		<option>1/13</option>
+	</select>
+	
+	<br><select id="select_3">
+		<option>1/2</option>
+		<option>1/4</option>
+		<option>1/5</option>
+		<option>1/10</option>
+		<option>1/13</option>
+	</select>
+	
+	<br><select id="select_4">
+		<option>1/2</option>
+		<option>1/4</option>
+		<option>1/5</option>
+		<option>1/10</option>
+		<option>1/13</option>
+	</select>
+	<input type='button' value='Display Selected' class="isSelect">
+	<form id="target_form" action="javascript:alert( 'success!' );">
+		So, there are <input type="text" id="answer"> possibilities
+		<br><input type="submit" value="Submit">
+	</form>
+	<span></span>
+</div>
+</body>
+</html>
