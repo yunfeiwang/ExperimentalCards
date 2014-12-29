@@ -30,8 +30,20 @@ $(document).ready(function(){
 		  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
 		  event.preventDefault();
   });
-  $(".isSelect").click(function () {  
-		alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
+  $(".isSelect").click(function () {
+	  	var data = [$("#select_1"),$("#select_2"),$("#select_3"),$("#select_4")];
+	  	var data_string = "";
+	  	var i = 0;
+	  	for (i = 0; i < 4; i++){
+	  		if (data[i].val() == "1/13"){
+	  			data_string += data[i].val() + ": correct \n";
+	  		}
+	  		else{
+	  			data_string += data[i].val() + ": incorrect \n";
+	  		}
+	  	}
+		//alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
+		alert(data_string);
   });
  
 });
@@ -121,7 +133,7 @@ $(document).ready(function(){
 		<option>1/10</option>
 		<option>1/13</option>
 	</select>
-	<input type='button' value='Display Selected' class="isSelect">
+	<br><input type='button' value='Check Answers' class="isSelect">
 	<form id="target_form" action="javascript:alert( 'success!' );">
 		So, there are <input type="text" id="answer"> possibilities
 		<br><input type="submit" value="Submit">
