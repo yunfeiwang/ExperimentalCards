@@ -19,10 +19,13 @@ $(document).ready(function(){
   });
   $("#get_card").click(function(){
 		$("#backcards").hide();
-		$("#frontcards").show();
+		$("#front_club_cards").show();
+		$("#chosen").show();
+		$("#get_card").hide();
+		$("#show_s2").show();
 	  });
   $("#target_form").click(function(event){
-	  if ( $( "input:first" ).val() === "correct" ) {
+	  if ( $( "input:first" ).val() === "4" ) {
 		    $( "span" ).text( "Validated..." ).show();
 		    return;
 		  }
@@ -45,6 +48,12 @@ $(document).ready(function(){
 		//alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
 		alert(data_string);
   });
+  $(".isAnswer").click(function(){
+	  if ($("#answer").val() == "4")
+		  alert("Answer Correct!");
+	  else
+		  alert("Answer Wrong!");
+  })
  
 });
 </script>
@@ -74,7 +83,7 @@ $(document).ready(function(){
 	</script>
 	<div id="backcards"></div>
 	
-	<div id="frontcards" style="display:none;">
+	<div id="front_club_cards" style="display:none;">
 		<img src="./club/Ace.png" alt="cannot display">		
 		<img src="./club/2.png" alt="cannot display">
 		<img src="./club/3.png" alt="cannot display">
@@ -89,12 +98,31 @@ $(document).ready(function(){
 		<img src="./club/12.png" alt="cannot display">
 		<img src="./club/13.png" alt="cannot display">
 	</div>
-	<br><button id="get_card">Flip</button>
-	<br><button id="show_s2">Continue</button>
+	<br>Chosen Card: 
+	<div id="chosen" style="display:none;">
+		<img src="./club/4.png" alt="cannot display">
+	</div>
+	<br><button id="get_card">Choose a Card and Flip</button>
+	<br><button id="show_s2" style="display:none;">Continue</button>
 </div>
 <div id="s2" style="display: none;">
 	<br>________________________________________________________________________________________________</br>
 	<br>Now, you are asked to pick a card from the following pile
+	<div id="front_heart_cards">
+		<img src="./heart/Ace.png" alt="cannot display">		
+		<img src="./heart/2.png" alt="cannot display">
+		<img src="./heart/3.png" alt="cannot display">
+		<img src="./heart/4.png" alt="cannot display">
+		<img src="./heart/5.png" alt="cannot display">
+		<img src="./heart/6.png" alt="cannot display">
+		<img src="./heart/7.png" alt="cannot display">
+		<img src="./heart/8.png" alt="cannot display">
+		<img src="./heart/9.png" alt="cannot display">
+		<img src="./heart/10.png" alt="cannot display">
+		<img src="./heart/11.png" alt="cannot display">
+		<img src="./heart/12.png" alt="cannot display">
+		<img src="./heart/13.png" alt="cannot display">
+	</div>
 	<br>What are your options for the sum being less than 9? 
 	<br><button id="show_s3">Continue</button>
 </div>
@@ -102,42 +130,70 @@ $(document).ready(function(){
 	<br>________________________________________________________________________________________________</br>
 	<br>What is the probability of choosing each card?
 	<br>
-	<br><select id="select_1">
-		<option>1/2</option>
-		<option>1/4</option>
-		<option>1/5</option>
-		<option>1/10</option>
-		<option>1/13</option>
-	</select>
+	<div style="width:300px; float:left;">
+		<img src="./club/4.png" alt="cannot display">
+		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
+	</div>
+	<div>
+		<img src="./heart/Ace.png" alt="cannot display">
+		<select id="select_1">
+			<option>1/2</option>
+			<option>1/4</option>
+			<option>1/5</option>
+			<option>1/10</option>
+			<option>1/13</option>
+		</select>
+	</div>
+	<div style="width:300px; float:left;">
+		<img src="./club/4.png" alt="cannot display">
+		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
+	</div>
+	<div>
+		<img src="./heart/2.png" alt="cannot display">
+		<select id="select_2">
+			<option>1/2</option>
+			<option>1/4</option>
+			<option>1/5</option>
+			<option>1/10</option>
+			<option>1/13</option>
+		</select>
+	</div>
 	
-	<br><select id="select_2">
-		<option>1/2</option>
-		<option>1/4</option>
-		<option>1/5</option>
-		<option>1/10</option>
-		<option>1/13</option>
-	</select>
+	<div style="width:300px; float:left;">
+		<img src="./club/4.png" alt="cannot display">
+		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
+	</div>
+	<div>
+		<img src="./heart/3.png" alt="cannot display">
+		<select id="select_3">
+			<option>1/2</option>
+			<option>1/4</option>
+			<option>1/5</option>
+			<option>1/10</option>
+			<option>1/13</option>
+		</select>
+	</div>
+	<div style="width:300px; float:left;">
+		<img src="./club/4.png" alt="cannot display">
+		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
+	</div>
+	<div>
+		<img src="./heart/4.png" alt="cannot display">
+		<select id="select_4">
+			<option>1/2</option>
+			<option>1/4</option>
+			<option>1/5</option>
+			<option>1/10</option>
+			<option>1/13</option>
+		</select>
+	</div>
 	
-	<br><select id="select_3">
-		<option>1/2</option>
-		<option>1/4</option>
-		<option>1/5</option>
-		<option>1/10</option>
-		<option>1/13</option>
-	</select>
-	
-	<br><select id="select_4">
-		<option>1/2</option>
-		<option>1/4</option>
-		<option>1/5</option>
-		<option>1/10</option>
-		<option>1/13</option>
-	</select>
 	<br><input type='button' value='Check Answers' class="isSelect">
 	<form id="target_form" action="javascript:alert( 'success!' );">
 		So, there are <input type="text" id="answer"> possibilities
 		<br><input type="submit" value="Submit">
 	</form>
+	<br><input type="button" value="Check Final" class="isAnswer">
 	<span></span>
 </div>
 </body>
