@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+img.card_image 
+{
+height:5%;
+width:5%;
+}
+
+img.plus_sign
+{
+	height:8%;
+	width:8%;
+}
+
+img.mark_and_cross
+{
+	position:relative;
+	left:-30px;
+	top:-35px;
+	height:15px;
+	width:15px;
+}
+
+p
+{
+	font-family:Arial,Verdana,Sans-serif;
+	font-weight:600;
+	line-height: 200%;
+	text-align: left;
+}
+
+select
+{
+	position:relative;
+	left:60px;
+	top:-30px;
+	height:40px;
+	width:150px;
+	font-size:35px;
+}
+
+a.selection_check
+{
+	position:relative;
+	left:-25px;
+	top:-35px;
+}

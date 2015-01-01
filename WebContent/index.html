@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./style/style.css" type="text/css" />
 <title>Experimental Probabilistic Questionnaire</title>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -17,12 +18,15 @@ $(document).ready(function(){
   $("#show_s3").click(function(){
 	$("#s3").show(); 
   });
+  $("#show_s4").click(function(){
+		$("#s4").show(); 
+  });
   $("#get_card").click(function(){
 		$("#backcards").hide();
 		$("#front_club_cards").show();
 		$("#chosen").show();
 		$("#get_card").hide();
-		$("#show_s2").show();
+		$("#show_s3").show();
 	  });
   $("#target_form").click(function(event){
 	  if ( $( "input:first" ).val() === "4" ) {
@@ -48,6 +52,78 @@ $(document).ready(function(){
 		//alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
 		alert(data_string);
   });
+  $("#isSelect1").click(function(){
+	  if ($("#select_1").val() == "1/13")
+		  {
+		  	$("#false_sign_1").hide();
+	  	  	$("#false_msg_1").hide();
+		  	$("#true_sign_1").show();
+		  }		  
+	  else
+		  {
+		    $("#true_sign_1").hide();
+		  	$("#false_sign_1").show();
+		  	$("#false_msg_1").show();
+		  }
+  });
+  $("#isSelect2").click(function(){
+	  if ($("#select_2").val() == "1/13")
+		  {
+		  	$("#false_sign_2").hide();
+	  	  	$("#false_msg_2").hide();
+		  	$("#true_sign_2").show();
+		  }		  
+	  else
+		  {
+		    $("#true_sign_2").hide();
+		  	$("#false_sign_2").show();
+		  	$("#false_msg_2").show();
+		  }
+  });
+  $("#isSelect3").click(function(){
+	  if ($("#select_3").val() == "1/13")
+		  {
+		  	$("#false_sign_3").hide();
+	  	  	$("#false_msg_3").hide();
+		  	$("#true_sign_3").show();
+		  }		  
+	  else
+		  {
+		    $("#true_sign_3").hide();
+		  	$("#false_sign_3").show();
+		  	$("#false_msg_3").show();
+		  }
+  });
+  $("#isSelect4").click(function(){
+	  if ($("#select_4").val() == "1/13")
+		  {
+		  	$("#false_sign_4").hide();
+	  	  	$("#false_msg_4").hide();
+		  	$("#true_sign_4").show();
+		  }		  
+	  else
+		  {
+		    $("#true_sign_4").hide();
+		  	$("#false_sign_4").show();
+		  	$("#false_msg_4").show();
+		  }
+  });
+  
+  $("#finalAnswer").click(function(){
+	  if ($("#answer").val() == "4")
+		  {
+		  	$("#false_sign_final").hide();
+	  	  	$("#false_msg_final").hide();
+		  	$("#true_sign_final").show();
+		  }		  
+	  else
+		  {
+		    $("#true_sign_final").hide();
+		  	$("#false_sign_final").show();
+		  	$("#false_msg_final").show();
+		  }
+  });
+  
   $(".isAnswer").click(function(){
 	  if ($("#answer").val() == "4")
 		  alert("Answer Correct!");
@@ -65,77 +141,96 @@ $(document).ready(function(){
 	<br>Prime Knowledge
 	<br>the probability of getting one card from a pile of them is the same since they are independent events. For example, getting A or 9 has the same probability(1/13) from a pile of 13 cards
 </p>
-<button id="show_s1">Continue</button>
+<p><button id="show_s1">OK</button></p>
+
+
 <div id="s1" style="display: none;">
-	<br>________________________________________________________________________________________________
-	<br>Q1: 
-	<br> Take 1 card from a pile of 13 (A-K). flip it over, you see a 4, and now take a second card from another pile of 13 cards (A-K), What is the probability of the sum being less than 9? 
+	<p>
+	<br>_______________________________________________________________________________________________________________________________________________________
+	<br>Q1:
+	<br>Take 1 card from a pile of 13 (A-K). flip it over, you see a 4, and now take a second card from another pile of 13 cards (A-K), What is the probability of the sum being less than 9?
+	<br><button id="show_s2">OK</button>
+	</p>
+</div>
+
+<div id="s2" style="display:none;">
 	<script>
 	$(function(){
 		var data = "<div>";
 		var i = 0;
 		for (i=0;i<13;i++){
-			data += "<img src=\"./club/back.png\" alt=\"cannot display\">";
+			data += "<img class=\"card_image\" src=\"./club/back.png\" alt=\"cannot display\">";
 		}
 		data += "</div>";
 		$('#backcards').append(data);
 	})	
 	</script>
 	<div id="backcards"></div>
+	<br><button id="get_card">Choose a Card and Flip</button>
 	
 	<div id="front_club_cards" style="display:none;">
-		<img src="./club/Ace.png" alt="cannot display">		
-		<img src="./club/2.png" alt="cannot display">
-		<img src="./club/3.png" alt="cannot display">
-		<img src="./club/4.png" alt="cannot display">
-		<img src="./club/5.png" alt="cannot display">
-		<img src="./club/6.png" alt="cannot display">
-		<img src="./club/7.png" alt="cannot display">
-		<img src="./club/8.png" alt="cannot display">
-		<img src="./club/9.png" alt="cannot display">
-		<img src="./club/10.png" alt="cannot display">
-		<img src="./club/11.png" alt="cannot display">
-		<img src="./club/12.png" alt="cannot display">
-		<img src="./club/13.png" alt="cannot display">
+		<img class="card_image" src="./club/Ace.png" alt="cannot display">
+		<img class="card_image" src="./club/2.png" alt="cannot display">
+		<img class="card_image" src="./club/3.png" alt="cannot display">
+		<img class="card_image" src="./club/4.png" alt="cannot display">
+		<img class="card_image" src="./club/5.png" alt="cannot display">
+		<img class="card_image" src="./club/6.png" alt="cannot display">
+		<img class="card_image" src="./club/7.png" alt="cannot display">
+		<img class="card_image" src="./club/8.png" alt="cannot display">
+		<img class="card_image" src="./club/9.png" alt="cannot display">
+		<img class="card_image" src="./club/10.png" alt="cannot display">
+		<img class="card_image" src="./club/11.png" alt="cannot display">
+		<img class="card_image" src="./club/12.png" alt="cannot display">
+		<img class="card_image" src="./club/13.png" alt="cannot display">
 	</div>
-	<br>Chosen Card: 
+	
 	<div id="chosen" style="display:none;">
-		<img src="./club/4.png" alt="cannot display">
+		<p>
+		<br>Chosen Card:
+		<br><img class="card_image" src="./club/4.png" alt="cannot display">
+		Ok, now you chose a 4</p>
 	</div>
-	<br><button id="get_card">Choose a Card and Flip</button>
-	<br><button id="show_s2" style="display:none;">Continue</button>
+	<br><button id="show_s3" style="display:none;">OK</button>
 </div>
-<div id="s2" style="display: none;">
-	<br>________________________________________________________________________________________________</br>
-	<br>Now, you are asked to pick a card from the following pile
-	<div id="front_heart_cards">
-		<img src="./heart/Ace.png" alt="cannot display">		
-		<img src="./heart/2.png" alt="cannot display">
-		<img src="./heart/3.png" alt="cannot display">
-		<img src="./heart/4.png" alt="cannot display">
-		<img src="./heart/5.png" alt="cannot display">
-		<img src="./heart/6.png" alt="cannot display">
-		<img src="./heart/7.png" alt="cannot display">
-		<img src="./heart/8.png" alt="cannot display">
-		<img src="./heart/9.png" alt="cannot display">
-		<img src="./heart/10.png" alt="cannot display">
-		<img src="./heart/11.png" alt="cannot display">
-		<img src="./heart/12.png" alt="cannot display">
-		<img src="./heart/13.png" alt="cannot display">
-	</div>
-	<br>What are your options for the sum being less than 9? 
-	<br><button id="show_s3">Continue</button>
-</div>
+
+
 <div id="s3" style="display: none;">
-	<br>________________________________________________________________________________________________</br>
+	<p>
+	<br>_______________________________________________________________________________________________________________________________________________________
+	<br>Now, you are asked to pick a card from the following pile
+	</p>
+	<div id="front_heart_cards">
+		<img class="card_image" src="./heart/Ace.png" alt="cannot display">		
+		<img class="card_image" src="./heart/2.png" alt="cannot display">
+		<img class="card_image" src="./heart/3.png" alt="cannot display">
+		<img class="card_image" src="./heart/4.png" alt="cannot display">
+		<img class="card_image" src="./heart/5.png" alt="cannot display">
+		<img class="card_image" src="./heart/6.png" alt="cannot display">
+		<img class="card_image" src="./heart/7.png" alt="cannot display">
+		<img class="card_image" src="./heart/8.png" alt="cannot display">
+		<img class="card_image" src="./heart/9.png" alt="cannot display">
+		<img class="card_image" src="./heart/10.png" alt="cannot display">
+		<img class="card_image" src="./heart/11.png" alt="cannot display">
+		<img class="card_image" src="./heart/12.png" alt="cannot display">
+		<img class="card_image" src="./heart/13.png" alt="cannot display">
+	</div>
+	<p>
+	<br>What are your options for the sum being less than 9? 
+	<br><button id="show_s4">OK</button>
+	</p>
+</div>
+
+
+<div id="s4" style="display: none;">
+	<p>
+	<br>_______________________________________________________________________________________________________________________________________________________
 	<br>What is the probability of choosing each card?
 	<br>
-	<div style="width:300px; float:left;">
-		<img src="./club/4.png" alt="cannot display">
-		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
-	</div>
+	</p>	
 	<div>
-		<img src="./heart/Ace.png" alt="cannot display">
+		<img class="card_image" src="./club/4.png" alt="cannot display">
+		<img class="plus_sign" src="./util/plus.png" alt="cannot display">
+		<img class="card_image" src="./heart/Ace.png" alt="cannot display">
 		<select id="select_1">
 			<option>1/2</option>
 			<option>1/4</option>
@@ -143,13 +238,15 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
+		<input type="button" value="Check Answer" id="isSelect1">
+		<img class="mark_and_cross" id="true_sign_1" src="./util/mark.jpg" alt="cannot display" style="display:none">
+		<img class="mark_and_cross" id="false_sign_1" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_1" style="display:none">Please think it over, and try again</a>
 	</div>
-	<div style="width:300px; float:left;">
-		<img src="./club/4.png" alt="cannot display">
-		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
-	</div>
+	
 	<div>
-		<img src="./heart/2.png" alt="cannot display">
+		<img class="card_image" src="./club/4.png" alt="cannot display" style="visibility:hidden">
+		<img class="plus_sign" src="./util/plus.png" height="150px" width="150px" alt="cannot display" style="visibility:hidden">
+		<img class="card_image" src="./heart/2.png" alt="cannot display">
 		<select id="select_2">
 			<option>1/2</option>
 			<option>1/4</option>
@@ -157,14 +254,15 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
+		<input type="button" value="Check Answer" id="isSelect2">
+		<img class="mark_and_cross" id="true_sign_2" src="./util/mark.jpg" alt="cannot display" style="display:none">
+		<img class="mark_and_cross" id="false_sign_2" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_2" style="display:none">Please think it over, and try again</a>
 	</div>
 	
-	<div style="width:300px; float:left;">
-		<img src="./club/4.png" alt="cannot display">
-		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
-	</div>
 	<div>
-		<img src="./heart/3.png" alt="cannot display">
+		<img class="card_image" src="./club/4.png" alt="cannot display" style="visibility:hidden">
+		<img class="plus_sign" src="./util/plus.png" height="150px" width="150px" alt="cannot display" style="visibility:hidden">
+		<img class="card_image" src="./heart/3.png" alt="cannot display">
 		<select id="select_3">
 			<option>1/2</option>
 			<option>1/4</option>
@@ -172,13 +270,14 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
-	</div>
-	<div style="width:300px; float:left;">
-		<img src="./club/4.png" alt="cannot display">
-		<img src="./util/plus.png" height="150px" width="150px" alt="cannot display">
+		<input type="button" value="Check Answer" id="isSelect3">
+		<img class="mark_and_cross" id="true_sign_3" src="./util/mark.jpg" alt="cannot display" style="display:none">
+		<img class="mark_and_cross" id="false_sign_3" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_3" style="display:none">Please think it over, and try again</a>
 	</div>
 	<div>
-		<img src="./heart/4.png" alt="cannot display">
+		<img class="card_image" src="./club/4.png" alt="cannot display" style="visibility:hidden">
+		<img class="plus_sign" src="./util/plus.png" height="150px" width="150px" alt="cannot display" style="visibility:hidden">
+		<img class="card_image" src="./heart/4.png" alt="cannot display">
 		<select id="select_4">
 			<option>1/2</option>
 			<option>1/4</option>
@@ -186,15 +285,30 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
+		<input type="button" value="Check Answer" id="isSelect4">
+		<img class="mark_and_cross" id="true_sign_4" src="./util/mark.jpg" alt="cannot display" style="display:none">
+		<img class="mark_and_cross" id="false_sign_4" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_4" style="display:none">Please think it over, and try again</a>
 	</div>
 	
-	<br><input type='button' value='Check Answers' class="isSelect">
+	<div>
+		<p>So, there are <input type="text" id="answer"> possibilities</p>
+		<input type="button" value="Check Answer" id="finalAnswer">
+		<img height="15px" width="15px" id="true_sign_final" src="./util/mark.jpg" alt="cannot display" style="display:none">
+		<img height="15px" width="15px" id="false_sign_final" src="./util/cross.png" alt="cannot display" style="display:none"> <a id="false_msg_final" style="display:none">Please think it over, and try again</a>
+	</div>
+	
+	<div style="display:none;">
 	<form id="target_form" action="javascript:alert( 'success!' );">
+		<p>
 		So, there are <input type="text" id="answer"> possibilities
-		<br><input type="submit" value="Submit">
+		<br><input type="submit" value="Submit" style="display:none;">
+		</p>
 	</form>
 	<br><input type="button" value="Check Final" class="isAnswer">
 	<span></span>
+	
+	<button id="show_s5">OK</button>
+	</div>
 </div>
 </body>
 </html>
