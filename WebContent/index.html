@@ -52,6 +52,7 @@ $(document).ready(function(){
 		//alert($("#select_1").val() + "\n" + $("#select_2").val() + "\n" + $("#select_3").val() + "\n" + $("#select_4").val());
 		alert(data_string);
   });
+  /*
   $("#isSelect1").click(function(){
 	  if ($("#select_1").val() == "1/13")
 		  {
@@ -94,6 +95,7 @@ $(document).ready(function(){
 		  	$("#false_msg_3").show();
 		  }
   });
+  
   $("#isSelect4").click(function(){
 	  if ($("#select_4").val() == "1/13")
 		  {
@@ -108,7 +110,68 @@ $(document).ready(function(){
 		  	$("#false_msg_4").show();
 		  }
   });
-  
+  */
+  $("#select_1").change(function(){
+	  //alert($(this).children('option:selected').val());  
+	  if ($(this).children('option:selected').val() == "1/13")
+		  {
+		  	$("#false_sign_1").hide();
+	  	  	$("#false_msg_1").hide();
+		  	$("#true_sign_1").show();
+		  }
+	  else
+		  {
+		  	$("#true_sign_1").hide();
+		  	$("#false_sign_1").show();
+		  	$("#false_msg_1").show();
+		  }
+  });
+  $("#select_2").change(function(){
+	  //alert($(this).children('option:selected').val());  
+	  if ($(this).children('option:selected').val() == "1/13")
+		  {
+		  	$("#false_sign_2").hide();
+	  	  	$("#false_msg_2").hide();
+		  	$("#true_sign_2").show();
+		  }
+	  else
+		  {
+		  	$("#true_sign_2").hide();
+		  	$("#false_sign_2").show();
+		  	$("#false_msg_2").show();
+		  }
+  });
+  $("#select_3").change(function(){
+	  //alert($(this).children('option:selected').val());  
+	  if ($(this).children('option:selected').val() == "1/13")
+		  {
+		  	$("#false_sign_3").hide();
+	  	  	$("#false_msg_3").hide();
+		  	$("#true_sign_3").show();
+		  }
+	  else
+		  {
+		  	$("#true_sign_3").hide();
+		  	$("#false_sign_3").show();
+		  	$("#false_msg_3").show();
+		  }
+  });
+  $("#select_4").change(function(){
+	  //alert($(this).children('option:selected').val());  
+	  if ($(this).children('option:selected').val() == "1/13")
+		  {
+		  	$("#false_sign_4").hide();
+	  	  	$("#false_msg_4").hide();
+		  	$("#true_sign_4").show();
+		  }
+	  else
+		  {
+		  	$("#true_sign_4").hide();
+		  	$("#false_sign_4").show();
+		  	$("#false_msg_4").show();
+		  }
+  });
+  /*
   $("#finalAnswer").click(function(){
 	  if ($("#answer").val() == "4")
 		  {
@@ -123,13 +186,22 @@ $(document).ready(function(){
 		  	$("#false_msg_final").show();
 		  }
   });
-  
-  $(".isAnswer").click(function(){
-	  if ($("#answer").val() == "4")
-		  alert("Answer Correct!");
+  */
+  $("#answer").change(function(){
+	  //alert($(this).val());
+	  if ($(this).val() == "4")
+		  {
+		  	$("#false_sign_final").hide();
+	  	  	$("#false_msg_final").hide();
+		  	$("#true_sign_final").show();
+		  }		  
 	  else
-		  alert("Answer Wrong!");
-  })
+		  {
+		    $("#true_sign_final").hide();
+		  	$("#false_sign_final").show();
+		  	$("#false_msg_final").show();
+		  }
+  });
  
 });
 </script>
@@ -238,7 +310,7 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
-		<input type="button" value="Check Answer" id="isSelect1">
+		<!-- <input type="button" value="Check Answer" id="isSelect1"> -->
 		<img class="mark_and_cross" id="true_sign_1" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_1" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_1" style="display:none">Please think it over, and try again</a>
 	</div>
@@ -254,7 +326,7 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
-		<input type="button" value="Check Answer" id="isSelect2">
+		<!-- <input type="button" value="Check Answer" id="isSelect2"> -->
 		<img class="mark_and_cross" id="true_sign_2" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_2" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_2" style="display:none">Please think it over, and try again</a>
 	</div>
@@ -270,7 +342,7 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
-		<input type="button" value="Check Answer" id="isSelect3">
+		<!-- <input type="button" value="Check Answer" id="isSelect3"> -->
 		<img class="mark_and_cross" id="true_sign_3" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_3" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_3" style="display:none">Please think it over, and try again</a>
 	</div>
@@ -285,30 +357,24 @@ $(document).ready(function(){
 			<option>1/10</option>
 			<option>1/13</option>
 		</select>
-		<input type="button" value="Check Answer" id="isSelect4">
+		<!-- <input type="button" value="Check Answer" id="isSelect4"> -->
 		<img class="mark_and_cross" id="true_sign_4" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_4" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_4" style="display:none">Please think it over, and try again</a>
 	</div>
 	
 	<div>
+		
 		<p>So, there are <input type="text" id="answer"> possibilities</p>
-		<input type="button" value="Check Answer" id="finalAnswer">
-		<img height="15px" width="15px" id="true_sign_final" src="./util/mark.jpg" alt="cannot display" style="display:none">
-		<img height="15px" width="15px" id="false_sign_final" src="./util/cross.png" alt="cannot display" style="display:none"> <a id="false_msg_final" style="display:none">Please think it over, and try again</a>
+
+		<input type="button" value="Check Answer" id="finalAnswer" style="display:none;">
+		<img class="mark_and_cross" id="true_sign_final" src="./util/mark.jpg" alt="cannot display" style="display:none;position=relative;left:375px;top:-43px;">
+		<img class="mark_and_cross" id="false_sign_final" src="./util/cross.png" alt="cannot display" style="display:none;position=relative;left:375px;top:-43px;"> <a class="selection_check" id="false_msg_final" style="display:none;position=relative;left:380px;top:-43px;">Please think it over, and try again</a>
 	</div>
 	
-	<div style="display:none;">
-	<form id="target_form" action="javascript:alert( 'success!' );">
-		<p>
-		So, there are <input type="text" id="answer"> possibilities
-		<br><input type="submit" value="Submit" style="display:none;">
-		</p>
-	</form>
-	<br><input type="button" value="Check Final" class="isAnswer">
-	<span></span>
+	
 	
 	<button id="show_s5">OK</button>
-	</div>
+	
 </div>
 </body>
 </html>
