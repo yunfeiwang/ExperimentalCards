@@ -15,7 +15,7 @@ img.plus_sign
 img.mark_and_cross
 {
 	position:relative;
-	left:-30px;
+	left:75px;
 	top:-35px;
 	height:15px;
 	width:15px;
@@ -42,6 +42,6 @@ select
 a.selection_check
 {
 	position:relative;
-	left:-25px;
+	left:85px;
 	top:-35px;
 }
