@@ -19,7 +19,36 @@ $(document).ready(function(){
 	$("#s3").show(); 
   });
   $("#show_s4").click(function(){
-		$("#s4").show(); 
+	$("#s4").show(); 
+  });
+  $("#show_s5").click(function(){
+	var data = [$("#select_1"),$("#select_2"),$("#select_3"),$("#select_4")];
+	var i = 0;
+	var mybool = false;
+	for (i=0;i<4;i++)
+		{
+			if (data[i].children('option:selected').val() == "1/13")
+				mybool = true;
+			else
+				mybool = false;
+		}
+	if ($("#answer").val() != "4")
+		mybool = false;
+	
+	if (mybool == true)
+		{
+			$(".or_and_plus_sign").css("visibility","visible");
+			$(".equal_sign").css("visibility","visible");
+			$(".stats").show();
+			$("#show_s5").hide();
+			$("#show_next").show();
+		}
+	else
+		{
+			$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		}
   });
   $("#get_card").click(function(){
 		$("#backcards").hide();
@@ -124,6 +153,12 @@ $(document).ready(function(){
 		  	$("#true_sign_1").hide();
 		  	$("#false_sign_1").show();
 		  	$("#false_msg_1").show();
+		  	
+		  	$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		  	$("#show_s5").show();
+			$("#show_next").hide();
 		  }
   });
   $("#select_2").change(function(){
@@ -139,6 +174,12 @@ $(document).ready(function(){
 		  	$("#true_sign_2").hide();
 		  	$("#false_sign_2").show();
 		  	$("#false_msg_2").show();
+		  	
+		  	$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		  	$("#show_s5").show();
+			$("#show_next").hide();
 		  }
   });
   $("#select_3").change(function(){
@@ -154,6 +195,12 @@ $(document).ready(function(){
 		  	$("#true_sign_3").hide();
 		  	$("#false_sign_3").show();
 		  	$("#false_msg_3").show();
+		  	
+		  	$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		  	$("#show_s5").show();
+			$("#show_next").hide();
 		  }
   });
   $("#select_4").change(function(){
@@ -169,6 +216,12 @@ $(document).ready(function(){
 		  	$("#true_sign_4").hide();
 		  	$("#false_sign_4").show();
 		  	$("#false_msg_4").show();
+		  	
+		  	$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		  	$("#show_s5").show();
+			$("#show_next").hide();
 		  }
   });
   /*
@@ -200,6 +253,12 @@ $(document).ready(function(){
 		    $("#true_sign_final").hide();
 		  	$("#false_sign_final").show();
 		  	$("#false_msg_final").show();
+		  	
+		  	$(".or_and_plus_sign").css("visibility","hidden");
+			$(".equal_sign").css("visibility","hidden");
+			$(".stats").hide();
+		  	$("#show_s5").show();
+			$("#show_next").hide();
 		  }  
   });
  
@@ -313,6 +372,11 @@ $(document).ready(function(){
 		<!-- <input type="button" value="Check Answer" id="isSelect1"> -->
 		<img class="mark_and_cross" id="true_sign_1" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_1" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_1" style="display:none">Please think it over, and try again</a>
+		<div class="or_and_plus_sign">
+			<a class="or">OR</a>
+			<img class="plus_sign_small" src="./util/plus.png" alt="cannot display">
+		</div>
+	
 	</div>
 	
 	<div>
@@ -329,6 +393,10 @@ $(document).ready(function(){
 		<!-- <input type="button" value="Check Answer" id="isSelect2"> -->
 		<img class="mark_and_cross" id="true_sign_2" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_2" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_2" style="display:none">Please think it over, and try again</a>
+		<div class="or_and_plus_sign">
+			<a class="or">OR</a>
+			<img class="plus_sign_small" src="./util/plus.png" alt="cannot display">
+		</div>
 	</div>
 	
 	<div>
@@ -345,7 +413,12 @@ $(document).ready(function(){
 		<!-- <input type="button" value="Check Answer" id="isSelect3"> -->
 		<img class="mark_and_cross" id="true_sign_3" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_3" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_3" style="display:none">Please think it over, and try again</a>
+		<div class="or_and_plus_sign">
+			<a class="or">OR</a>
+			<img class="plus_sign_small" src="./util/plus.png" alt="cannot display">
+		</div>
 	</div>
+	
 	<div>
 		<img class="card_image" src="./club/4.png" alt="cannot display" style="visibility:hidden">
 		<img class="plus_sign" src="./util/plus.png" height="150px" width="150px" alt="cannot display" style="visibility:hidden">
@@ -360,21 +433,26 @@ $(document).ready(function(){
 		<!-- <input type="button" value="Check Answer" id="isSelect4"> -->
 		<img class="mark_and_cross" id="true_sign_4" src="./util/mark.jpg" alt="cannot display" style="display:none">
 		<img class="mark_and_cross" id="false_sign_4" src="./util/cross.png" alt="cannot display" style="display:none"> <a class="selection_check" id="false_msg_4" style="display:none">Please think it over, and try again</a>
+		<div class="equal_sign">
+			<img class="rotate_equal" src="./util/equal.png" alt="cannot display">
+		</div>
 	</div>
 	
 	<div>
 		
-		<p>So, there are <input type="text" id="answer"> possibilities</p>
+		<p>So, there are <input type="text" id="answer" size="5"> possibilities</p>
 
 		<input type="button" value="Check Answer" id="finalAnswer" style="display:none;">
-		<img class="mark_and_cross" id="true_sign_final" src="./util/mark.jpg" alt="cannot display" style="display:none;position=relative;left:375px;top:-43px;">
-		<img class="mark_and_cross" id="false_sign_final" src="./util/cross.png" alt="cannot display" style="display:none;position=relative;left:375px;top:-43px;"> <a class="selection_check" id="false_msg_final" style="display:none;position=relative;left:380px;top:-43px;">Please think it over, and try again</a>
+		<img class="mark_and_cross" id="true_sign_final" src="./util/mark.jpg" alt="cannot display" style="display:none;position=relative;left:290px;top:-43px;">
+		<img class="mark_and_cross" id="false_sign_final" src="./util/cross.png" alt="cannot display" style="display:none;position=relative;left:290px;top:-43px;"> <a class="selection_check" id="false_msg_final" style="display:none;position=relative;left:295px;top:-43px;">Please think it over, and try again</a>
+		<div class="stats" style="display:none;">
+			<img class="circle" src="./util/circle.jpg" alt="cannot display">
+			<a style="position:relative;left:170px;top:-135px;font-size:25px">4/13</a>
+		</div>
+		
 	</div>
-	
-	
-	
 	<button id="show_s5">OK</button>
-	
+	<button id="show_next" style="display:none">Next</button>	
 </div>
 </body>
 </html>

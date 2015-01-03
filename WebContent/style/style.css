@@ -12,13 +12,39 @@ img.plus_sign
 	width:8%;
 }
 
+img.plus_sign_small
+{
+	position:relative;
+	left:365px;
+	top:-10px;
+	height:4%;
+	width:4%;
+}
+
+img.rotate_equal
+{
+	position:relative;
+	left:400px;
+	top:15px;
+	height:6%;
+	width:2%;
+	-moz-transform:rotate(90deg); 
+}
+
 img.mark_and_cross
 {
 	position:relative;
-	left:75px;
+	left:115px;
 	top:-35px;
 	height:15px;
 	width:15px;
+}
+
+img.circle
+{
+	position:relative;
+	left:310px;
+	top:-35px;
 }
   
 p
@@ -32,7 +58,7 @@ p
 select
 {
 	position:relative;
-	left:60px;
+	left:100px;
 	top:-30px;
 	height:40px;
 	width:150px;
@@ -42,6 +68,23 @@ select
 a.selection_check
 {
 	position:relative;
-	left:85px;
+	left:125px;
 	top:-35px;
+}
+
+a.or
+{
+	position:relative;
+	left:200px;
+	top:-25px;
+}
+
+div.or_and_plus_sign
+{
+	visibility:hidden;
+}
+
+div.equal_sign
+{
+	visibility:hidden;
 }
